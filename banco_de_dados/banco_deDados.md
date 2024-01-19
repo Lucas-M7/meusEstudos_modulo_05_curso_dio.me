@@ -1,5 +1,3 @@
-# Banco de Dados
-
 # O Que São Dados?
 
 Dados, são efetivamente FATOS, ou seja, dados estão relacionados a um determinado acontecimento.
@@ -72,3 +70,151 @@ Bancos de Dados desempenham um papel crucial em quase todos os setores, desde si
     - Bancos de Dados que são hospedados e operados em ambientes de nuvem, oferecendo escalabilidade e acessibilidade fácil pela Internet. Exemplos incluem Amazon DynamoDB, Google Cloud Firestore e Microsoft Azure Cosmos DB.
 10. **Banco de Dados Colunar:**
     - Organiza os dados em colunas em vez de linhas, o que pode ser eficiente para consultas analíticas. Exemplos incluem Apache Cassandra e HBase.
+
+# Tipos de Dados:
+
+1. **INTEGER ou INT:**
+    - Armazena números inteiros, sem casas decimais.
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        ID INTEGER,
+        Nome VARCHAR(50)
+    );
+    
+    ```
+    
+2. **VARCHAR(n) ou CHAR(n):**
+    - VARCHAR armazena strings de comprimento variável, enquanto CHAR armazena strings de comprimento fixo.
+    - "n" especifica o número máximo de caracteres.
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        Nome VARCHAR(255),
+        Sobrenome CHAR(50)
+    );
+    
+    ```
+    
+3. **FLOAT ou DOUBLE:**
+    - Armazena números de ponto flutuante com precisão dupla.
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        Preco FLOAT,
+        Taxa DOUBLE
+    );
+    
+    ```
+    
+4. **DATE ou DATETIME:**
+    - DATE armazena datas, enquanto DATETIME armazena datas e horários.
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        DataNascimento DATE,
+        DataCadastro DATETIME
+    );
+    
+    ```
+    
+5. **BOOLEAN ou BIT:**
+    - Armazena valores booleanos (verdadeiro ou falso).
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        Ativo BOOLEAN,
+        Status BIT
+    );
+    
+    ```
+    
+6. **DECIMAL(p, s) ou NUMERIC(p, s):**
+    - Armazena números decimais com precisão fixa.
+    - "p" é o número total de dígitos e "s" é o número de dígitos à direita do ponto decimal.
+    
+    Exemplo:
+    
+    ```sql
+    CREATE TABLE Exemplo (
+        Saldo DECIMAL(10, 2),
+        Taxa NUMERIC(5, 3)
+    );
+    
+    ```
+    
+    Nos bancos de dados SQL, os tipos de dados de string são utilizados para armazenar dados de texto. Alguns dos tipos de dados de string mais comuns incluem:
+    
+    1. **CHAR(n) ou VARCHAR(n):**
+        - **CHAR(n):** Armazena strings de comprimento fixo. Se o comprimento da string for menor que n, ela é preenchida com espaços em branco.
+        - **VARCHAR(n):** Armazena strings de comprimento variável, com um comprimento máximo de n.
+        
+        Exemplo:
+        
+        ```sql
+        CREATE TABLE Exemplo (
+            Nome CHAR(50),
+            Descricao VARCHAR(255)
+        );
+        
+        ```
+        
+    2. **TEXT:**
+        - Armazena strings de comprimento variável, geralmente utilizada para textos extensos.
+        
+        Exemplo:
+        
+        ```sql
+        CREATE TABLE Exemplo (
+            Conteudo TEXT
+        );
+        
+        ```
+        
+    3. **NCHAR(n) ou NVARCHAR(n):**
+        - **NCHAR(n):** Armazena strings Unicode de comprimento fixo.
+        - **NVARCHAR(n):** Armazena strings Unicode de comprimento variável.
+        
+        Exemplo:
+        
+        ```sql
+        CREATE TABLE Exemplo (
+            Nome NCHAR(50),
+            Descricao NVARCHAR(255)
+        );
+        
+        ```
+        
+    4. **ENUM:**
+        - Armazena um conjunto de valores pré-definidos. Cada coluna ENUM pode armazenar um valor da lista especificada.
+        
+        Exemplo:
+        
+        ```sql
+        CREATE TABLE Exemplo (
+            Status ENUM('Ativo', 'Inativo', 'Pendente')
+        );
+        
+        ```
+        
+    5. **JSON:**
+        - Armazena dados no formato JSON (JavaScript Object Notation).
+        
+        Exemplo:
+        
+        ```sql
+        CREATE TABLE Exemplo (
+            Dados JSON
+        );
+        
+        ```
