@@ -1,3 +1,5 @@
+# Banco de Dados
+
 # O Que São Dados?
 
 Dados, são efetivamente FATOS, ou seja, dados estão relacionados a um determinado acontecimento.
@@ -218,3 +220,70 @@ Bancos de Dados desempenham um papel crucial em quase todos os setores, desde si
         );
         
         ```
+        
+        Comandos de agregação no SQL que permitem realizar cálculos em conjuntos de dados. Eles são frequentemente usados em conjunto com a cláusula `GROUP BY` para operar em grupos específicos de registros em uma tabela. Aqui estão explicações para cada um desses comandos:
+        
+        1. **COUNT()**: Conta o número de linhas em um conjunto de resultados. Pode ser usado sem uma cláusula `GROUP BY` para contar todas as linhas ou com `GROUP BY` para contar as linhas em grupos específicos.
+            
+            Exemplo sem `GROUP BY`:
+            
+            ```sql
+            SELECT COUNT(*) FROM tabela;
+            
+            ```
+            
+            Exemplo com `GROUP BY`:
+            
+            ```sql
+            SELECT categoria, COUNT(*) FROM produtos GROUP BY categoria;
+            
+            ```
+            
+        2. **SUM()**: Calcula a soma de valores em uma coluna. Pode ser usado para somar todos os valores ou para somar valores em grupos específicos.
+            
+            Exemplo sem `GROUP BY`:
+            
+            ```sql
+            SELECT SUM(quantidade) FROM vendas;
+            
+            ```
+            
+            Exemplo com `GROUP BY`:
+            
+            ```sql
+            SELECT departamento, SUM(salario) FROM funcionarios GROUP BY departamento;
+            
+            ```
+            
+        3. **MIN()**: Retorna o menor valor em uma coluna.
+            
+            ```sql
+            SELECT MIN(preco) FROM produtos;
+            
+            ```
+            
+        4. **MAX()**: Retorna o maior valor em uma coluna.
+            
+            ```sql
+            SELECT MAX(data_nascimento) FROM clientes;
+            
+            ```
+            
+        5. **AVG()**: Calcula a média dos valores em uma coluna. Pode ser usado para calcular a média de todos os valores ou a média em grupos específicos.
+            
+            Exemplo sem `GROUP BY`:
+            
+            ```sql
+            SELECT AVG(nota) FROM avaliacoes;
+            
+            ```
+            
+            Exemplo com `GROUP BY`:
+            
+            ```sql
+            SELECT departamento, AVG(salario) FROM funcionarios GROUP BY departamento;
+            
+            ```
+            
+        
+        Esses comandos de agregação são poderosos para realizar cálculos estatísticos e sumarizações nos dados armazenados em um banco de dados. Ao usar a cláusula `GROUP BY`, você pode segmentar os resultados com base em categorias específicas, como departamentos, categorias de produtos, etc. Esses comandos são parte fundamental das consultas SQL para análise de dados.
