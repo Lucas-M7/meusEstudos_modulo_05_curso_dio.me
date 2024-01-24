@@ -287,3 +287,40 @@ Bancos de Dados desempenham um papel crucial em quase todos os setores, desde si
             
         
         Esses comandos de agregação são poderosos para realizar cálculos estatísticos e sumarizações nos dados armazenados em um banco de dados. Ao usar a cláusula `GROUP BY`, você pode segmentar os resultados com base em categorias específicas, como departamentos, categorias de produtos, etc. Esses comandos são parte fundamental das consultas SQL para análise de dados.
+        
+        O comando `WHERE` em SQL é usado para filtrar os resultados de uma consulta com base em condições específicas. Aqui está a sintaxe básica para uma consulta SQL com a cláusula `WHERE`:
+        
+        ```sql
+        SELECT coluna1, coluna2, ...
+        FROM nome_tabela
+        WHERE condição;
+        
+        ```
+        
+        Por exemplo, suponha que você tenha uma tabela chamada `funcionarios` e queira recuperar apenas as linhas onde o `departamento` seja 'RH'. A consulta SQL ficaria assim:
+        
+        ```sql
+        SELECT *
+        FROM funcionarios
+        WHERE departamento = 'RH';
+        
+        ```
+        
+        Neste exemplo, a cláusula `WHERE` filtra os resultados para incluir apenas as linhas em que o valor na coluna `departamento` seja igual a 'RH'. Você pode usar vários operadores de comparação, como `=`, `<>` (não igual), `<`, `>`, `<=`, `>=`, etc., na cláusula `WHERE` para especificar as condições de filtragem.
+        
+        Aqui estão mais alguns exemplos:
+        
+        ```sql
+        -- Recuperar funcionários com salário superior a 50000
+        SELECT *
+        FROM funcionarios
+        WHERE salario > 50000;
+        
+        -- Recuperar pedidos feitos após uma data específica
+        SELECT *
+        FROM pedidos
+        WHERE data_pedido > '2022-01-01';
+        
+        ```
+        
+        A sintaxe específica e o uso podem variar dependendo do sistema de banco de dados SQL que você está usando (por exemplo, MySQL, PostgreSQL, SQL Server, etc.).
