@@ -324,3 +324,24 @@ Bancos de Dados desempenham um papel crucial em quase todos os setores, desde si
         ```
         
         A sintaxe específica e o uso podem variar dependendo do sistema de banco de dados SQL que você está usando (por exemplo, MySQL, PostgreSQL, SQL Server, etc.).
+
+Em SQL Server, uma função é uma operação pré-definida ou definida pelo usuário que pode ser invocada para realizar uma tarefa específica. As funções no SQL Server podem ser amplamente categorizadas em dois tipos: funções do sistema e funções definidas pelo usuário.
+
+1. **Funções do Sistema:**
+   - **Funções Escalares:** Essas funções operam em um único valor e retornam um único valor. Exemplos incluem `LEN()`, `UPPER()`, `LOWER()`, etc.
+   
+   ```sql
+   SELECT LEN('Olá') AS TamanhoDeOla;
+   ```
+
+   - **Funções de Agregação:** Essas funções realizam um cálculo em um conjunto de valores e retornam um único valor. Exemplos incluem `SUM()`, `AVG()`, `COUNT()`, etc.
+   
+   ```sql
+   SELECT AVG(Salario) AS SalarioMedio FROM Funcionario;
+   ```
+
+   - **Funções de String:** Funções que operam em dados de caracteres ou strings. Exemplos incluem `SUBSTRING()`, `CONCAT()`, `CHARINDEX()`, etc.
+   
+   ```sql
+   SELECT CONCAT(Nome, ' ', Sobrenome) AS NomeCompleto FROM Cliente;
+   ```
