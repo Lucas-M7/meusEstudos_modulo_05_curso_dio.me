@@ -345,3 +345,20 @@ Em SQL Server, uma função é uma operação pré-definida ou definida pelo usu
    ```sql
    SELECT CONCAT(Nome, ' ', Sobrenome) AS NomeCompleto FROM Cliente;
    ```
+
+Um procedimento armazenado (stored procedure) no SQL Server é uma coleção pré-compilada de uma ou mais instruções Transact-SQL que realizam uma tarefa específica. Procedimentos armazenados podem aceitar parâmetros de entrada, retornar parâmetros de saída e até mesmo retornar conjuntos de resultados. Eles são úteis para encapsular lógica, melhorar o desempenho e manter a consistência do código. Aqui está um exemplo básico de como criar um procedimento armazenado no SQL Server:
+
+```sql
+-- Criar um procedimento armazenado simples
+CREATE PROCEDURE ObterFuncionario
+    @IDFuncionario INT
+AS
+BEGIN
+    -- Consulta para recuperar informações do funcionário
+    SELECT Nome, Sobrenome, Departamento
+    FROM Funcionarios
+    WHERE IDFuncionario = @IDFuncionario;
+END;
+```
+
+Neste exemplo, o procedimento armazenado `ObterFuncionario` aceita um parâmetro `@IDFuncionario` e retorna as informações do funcionário correspondente. Esse é apenas um exemplo básico, e os procedimentos armazenados podem ser mais complexos, envolvendo lógica de negócios mais avançada e manipulação de dados.
