@@ -1,0 +1,17 @@
+# Banco de Dados Não Relacionais
+
+Bancos de dados não relacionais, também conhecidos como NoSQL (Not Only SQL), são sistemas de gerenciamento de banco de dados que diferem dos tradicionais bancos de dados relacionais. Eles foram desenvolvidos para atender a novos requisitos e demandas que surgiram com o advento de aplicativos modernos e grandes volumes de dados não estruturados. Aqui estão algumas características-chave dos bancos de dados não relacionais:
+
+1. **Modelo de dados flexível:** Diferentemente dos bancos de dados relacionais, que utilizam um esquema fixo e tabelas com relações predefinidas, os bancos de dados NoSQL oferecem esquemas dinâmicos e flexíveis. Isso permite que os desenvolvedores armazenem dados não estruturados ou semiestruturados.
+
+2. **Escalabilidade horizontal:** Muitos bancos de dados NoSQL são projetados para escalar horizontalmente, o que significa que você pode adicionar mais servidores para lidar com um aumento na carga de trabalho. Isso é particularmente útil em ambientes distribuídos e em aplicativos de grande escala.
+
+3. **Desnormalização:** Ao contrário dos bancos de dados relacionais, que geralmente buscam normalizar os dados para evitar redundância, os bancos de dados NoSQL muitas vezes adotam uma abordagem de desnormalização. Isso pode melhorar o desempenho em leituras, embora às custas de uma maior redundância de dados.
+
+4. **Tipos de dados variados:** Bancos de dados NoSQL suportam uma variedade de tipos de dados, incluindo documentos, pares chave-valor, colunas e grafos. Isso os torna adequados para diferentes tipos de aplicativos e casos de uso.
+
+5. **Consistência eventual:** Alguns bancos de dados NoSQL adotam o modelo de consistência eventual, que permite uma flexibilidade maior em termos de consistência dos dados entre diferentes nós em um ambiente distribuído. Isso é uma troca em relação à consistência imediata, comum em bancos de dados relacionais.
+
+6. **Uso específico de casos:** Bancos de dados NoSQL são frequentemente escolhidos para aplicativos que requerem grande escalabilidade, flexibilidade no esquema de dados, rápido desenvolvimento e recuperação eficiente de dados.
+
+Exemplos de bancos de dados NoSQL incluem MongoDB (documentos), Cassandra (colunas), Redis (chave-valor), e Neo4j (grafos). A escolha do banco de dados NoSQL dependerá dos requisitos específicos do seu projeto e das características de cada sistema.
