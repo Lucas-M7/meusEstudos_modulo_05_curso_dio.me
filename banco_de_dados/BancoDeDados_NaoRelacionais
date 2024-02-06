@@ -15,3 +15,53 @@ Bancos de dados não relacionais, também conhecidos como NoSQL (Not Only SQL), 
 6. **Uso específico de casos:** Bancos de dados NoSQL são frequentemente escolhidos para aplicativos que requerem grande escalabilidade, flexibilidade no esquema de dados, rápido desenvolvimento e recuperação eficiente de dados.
 
 Exemplos de bancos de dados NoSQL incluem MongoDB (documentos), Cassandra (colunas), Redis (chave-valor), e Neo4j (grafos). A escolha do banco de dados NoSQL dependerá dos requisitos específicos do seu projeto e das características de cada sistema.
+
+Inserção de dados com C# no MongoDB
+
+```csharp
+using MongoDB.Driver;
+using MongoDB.Bson;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Estabelecer a conexão com o servidor MongoDB (por padrão, será localhost na porta 27017)
+        MongoClient client = new MongoClient();
+
+        // Acessar o banco de dados desejado (se não existir, será criado automaticamente)
+        IMongoDatabase database = client.GetDatabase("nome_do_banco_de_dados");
+
+        // Acessar a coleção onde deseja inserir os dados (se não existir, será criada automaticamente)
+        IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("nome_da_colecao");
+
+        // Dados que deseja inserir (nesse exemplo, é um documento BsonDocument)
+        var documento = new BsonDocument
+        {
+            { "nome", "Exemplo" },
+            { "idade", 30 },
+            { "cidade", "São Paulo" }
+        };
+
+        // Inserir o documento na coleção
+        collection.InsertOne(documento);
+
+        // Imprimir uma mensagem de confirmação
+        Console.WriteLine("Documento inserido com sucesso.");
+
+        // Esperar por uma tecla antes de sair (apenas para manter o console aberto)
+        Console.ReadKey();
+    }
+}
+```
+
+Neste exemplo:
+
+- Estabelecemos uma conexão com o servidor MongoDB local.
+- Acessamos (ou criamos, se não existir) um banco de dados chamado "nome_do_banco_de_dados".
+- Acessamos (ou criamos, se não existir) uma coleção chamada "nome_da_colecao" dentro desse banco de dados.
+- Criamos um documento usando a classe `BsonDocument` do MongoDB.Bson, que representa um documento BSON.
+- Utilizamos o método `InsertOne()` da coleção para inserir um único documento na coleção.
+- Imprimimos uma mensagem de confirmação.
+
+Certifique-se de adicionar referências ao assembly do MongoDB.Driver ao seu projeto para poder utilizar o driver oficial do MongoDB com C#.
